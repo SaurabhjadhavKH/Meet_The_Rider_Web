@@ -1,22 +1,26 @@
 package com.meettherider.entities;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "admin_details")
 public class Admin {
 	
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	public String id;
+	public int id;
 	public String username;
 	public String password;
 	public Admin() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Admin(String id, String username, String password) {
+	public Admin(int id, String username, String password) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -27,10 +31,10 @@ public class Admin {
 		this.username = username;
 		this.password = password;
 	}
-	public String getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getUsername() {
