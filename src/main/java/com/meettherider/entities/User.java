@@ -4,18 +4,24 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @Entity
 public class User {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int user_id;
+
+	@NotBlank(message = "User Name can not be Empty !!")
+	@Size(min = 2, max = 25, message = "User name must be between 2 - 25 characters !!")
 	private String user_name;
+
 	private String user_email;
 	private long user_mobile;
 	private String user_dob;
-	private String  user_gender;
+	private String user_gender;
 	private String user_address;
 	private String user_licence_no;
 	private String user_bike_no;
@@ -23,7 +29,7 @@ public class User {
 	private String user_aadhar;
 	private String role;
 	private boolean status;
-	
+
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -137,12 +143,12 @@ public class User {
 		this.user_address = user_address;
 	}
 
-	public String getUesr_licence_no() {
+	public String getUser_licence_no() {
 		return user_licence_no;
 	}
 
-	public void setUesr_licence_no(String uesr_licence_no) {
-		this.user_licence_no = uesr_licence_no;
+	public void setUser_licence_no(String user_licence_no) {
+		this.user_licence_no = user_licence_no;
 	}
 
 	public String getUser_bike_no() {
@@ -193,22 +199,5 @@ public class User {
 				+ ", user_password=" + user_password + ", user_aadhar=" + user_aadhar + ", role=" + role + ", status="
 				+ status + "]";
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 }

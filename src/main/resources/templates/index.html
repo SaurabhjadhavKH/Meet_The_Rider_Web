@@ -7,17 +7,39 @@
 </head>
 
 <body>
-<body>
-	<div class="container">
+<div class="container">
+	 <div class="row justify-content-center mt-5 ">
+	 
+  <div class="form-group col-md-5 col-md-offset-3 align-center ">
+	
 		<h1>User Login</h1>
-		<form th:action="@{adminValidate}" method="post" th:object=${admin}>
-			<div>Email or Phone</div>
-			<input th:type="text" placeholder="Enter The Username" th:field=*{username}>
-			<input th:type="text" placeholder="Enter The Password" th:field=*{password}>
-			<button type="Submit">Login</button>
-			
+		<form th:action="@{/adminValidate}" method="post" th:object=${admin}>
+		
+		            <div class="mb-3">
+						<label for="exampleInputEmail1" class="form-label">Email or Phone</label>
+							
+					     <input  th:type="text" placeholder="Enter The Username" 
+					   		     name="username"
+					             class="form-control" 
+					             th:field=*{username}>  
+				   </div>
+		
+		           <div class="mb-3">
+						<label for="exampleInputPassword1" class="form-label">Password</label>
+						
+						  <input th:type="password" 
+						         placeholder="Enter The Password" 
+						         class="form-control"
+						         th:field=*{password}>
+				  </div><br>
+		
+		
+		<div><button type="submit" class="btn btn-primary">Submit</button></div>
+		          
 		</form>
-		</div>	
+		</div>
+		</div>
+		</div>
 	
 
 </body>
