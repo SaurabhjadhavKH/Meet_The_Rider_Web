@@ -20,5 +20,10 @@ public class UserController {
 	{
 		return this.userService.insertUser(user);
 	}
+	
+	
+	
+	
+	
 
 }

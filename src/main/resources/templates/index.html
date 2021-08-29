@@ -1,11 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Home</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
+
 <body>
-<h1>Hello World</h1>
+<body>
+	<div class="container">
+		<h1>User Login</h1>
+		<form th:action="@{adminValidate}" method="post" th:object=${admin}>
+			<div>Email or Phone</div>
+			<input th:type="text" placeholder="Enter The Username" th:field=*{username}>
+			<input th:type="text" placeholder="Enter The Password" th:field=*{password}>
+			<button type="Submit">Login</button>
+			
+		</form>
+		</div>	
+	
 
 </body>
 </html>

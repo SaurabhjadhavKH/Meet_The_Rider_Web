@@ -10,6 +10,8 @@ public interface AdminService {
 	
 	public Admin insertAdmin(Admin admin);
 	
+	public boolean validate(String username , String password);
+	
 	
 	
 

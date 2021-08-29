@@ -22,6 +22,25 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 
+	@Override
+	public boolean validate(String username, String password) {
+	
+		Admin pass = this.adminRespository.findByUsername(username);
+		
+		boolean check=false;
+		
+		if(pass == null)
+		{
+			check= false;
+		}else if(password.equals(pass.getPassword())) {
+			check= true;
+		}
+		return check;
+		
+		
+	}
+
+
 	
 
 }

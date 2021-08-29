@@ -6,6 +6,6 @@ import com.meettherider.entities.Admin;
 
 public interface AdminRespository extends JpaRepository<Admin, Integer> {
 
-	
+	public Admin findByUsername(String username);
 		
 }
