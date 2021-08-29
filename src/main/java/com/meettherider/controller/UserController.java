@@ -39,19 +39,11 @@ public class UserController {
 	
 	
 	
-	
-	@PostMapping("/userinfo")
-	public String userdata(@Valid @ModelAttribute("user")  User user , Model model, BindingResult result)
+	@PostMapping("/userdata")
+	public User RegisterUser(@RequestBody User user)
 	{
-		if(result.hasErrors())
-		{
-			System.out.println(result);
-		}
-		
-		
-		return "home";
+		return this.userService.insertUser(user);
 	}
-	
 	
 	
 	
