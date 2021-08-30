@@ -1,15 +1,24 @@
 package com.meettherider.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+import com.meettherider.entities.User;
+import com.meettherider.service.UserService;
+
+@RestController
 public class UserController {
 	
-	@GetMapping("/")
-	public String indexpage() {
-		
-		return "index";
+	@Autowired
+	private UserService userService;
+	
+	
+	@PostMapping("/user")
+	public User addUser(@RequestBody User user)
+	{
+		return this.userService.insertUser(user);
 	}
 
 }
